@@ -1,6 +1,6 @@
 <template>
   <div class="taskContainer">
-     <table class="task-table">
+    <table class="task-table">
       <thead>
         <tr>
           <th>Task Name</th>
@@ -13,13 +13,17 @@
           <td>{{ item.task_name }}</td>
           <td>{{ item.task_status }}</td>
           <td>
-            <router-link style="color: green" :to="{ name: 'EditTask', params: { id: item.task_id }}">UPDATE</router-link>
+            <router-link
+              style="color: green"
+              :to="{ name: 'EditTask', params: { id: item.task_id } }"
+              >UPDATE</router-link
+            >
             <a @click="deleteTask(item.task_id)">DELETE</a>
           </td>
         </tr>
       </tbody>
     </table>
-    <img src="@/assets/icon.png" alt="icon" class="table-image" />
+    <!-- <img src="@/assets/" alt="icon" class="table-image" /> -->
   </div>
 </template>
 
@@ -70,7 +74,8 @@ export default {
   background-color: white; /* Set background color to white */
 }
 
-.task-table th, .task-table td {
+.task-table th,
+.task-table td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
